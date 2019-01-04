@@ -1,0 +1,35 @@
+{
+  "name": "understanding-nodejs-streams",
+  "version": "0.0.1",
+  "description": "Sample codes to understand nodejs streams",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "nyc --reporter=html --reporter=text mocha --timeout 10000 --recursive tests/ --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkterungwa16/understanding-nodejs-streams.git"
+  },
+  "keywords": [
+    "nodejs",
+    "streams"
+  ],
+  "author": "Terungwa Kombol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rkterungwa16/understanding-nodejs-streams/issues"
+  },
+  "homepage": "https://github.com/rkterungwa16/understanding-nodejs-streams#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "sinon": "^7.2.2"
+  }
+}
