@@ -1,0 +1,6 @@
+How to compress a file by gzip using node streaming API
+
+To run the program issue the command:
+  node streamGzip <path to file>
+
+The gzipped file will be created in the same directory of the original file.

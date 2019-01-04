@@ -1,0 +1,8 @@
+How to compress a file by gzip using node buffered API
+
+To run the program issue the command:
+  node bufferGzip <path to file>
+
+The gzipped file will be created in the same directory of the original file.
+
+RangeError: Array buffer allocation failed
