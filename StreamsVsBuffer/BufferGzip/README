@@ -1,8 +1,19 @@
 How to compress a file by gzip using node buffered API
+  Buffer data and process it all at once
+  Return a buffer when the operation is complete(Read, write etc)
+
+Brief description of buffer mode:
+  Buffer mode causes all the data coming from a resource to be collected into a buffer
+  It is then passed to a callback as soon as the entire resource is read
+
+With Buffer mode there is limit to the size of file that can be read
+  Buffers in V8 cannot be greater than `0X3FFFFFFF bytes`
+  A file greater than this amount will throw `RangeError: Array buffer allocation failed`
+
+Operations on buffers are sequential: One operation must complete before the next starts
 
 To run the program issue the command:
   node bufferGzip <path to file>
 
 The gzipped file will be created in the same directory of the original file.
 
-RangeError: Array buffer allocation failed

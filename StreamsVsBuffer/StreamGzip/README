@@ -1,4 +1,18 @@
 How to compress a file by gzip using node streaming API
+  Node stream module's primary composition operator is called .pipe()
+  Plug the output of one stream to the input of another stream
+  Example of streams in Node:
+   fs.createReadStream
+   fs.createWriteStream
+   response and request object
+   zlib.createGzip
+
+Brief description of stream mode:
+  With Stream mode, you start using the data the moment a stream is created.
+
+With streams you can run operations on files of any size
+
+Operations on streams are concurrent: Two or more operations can performed on same data at the same time
 
 To run the program issue the command:
   node streamGzip <path to file>
