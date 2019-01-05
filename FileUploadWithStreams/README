@@ -1,6 +1,16 @@
 This sample demonstrates how to stream a file to a remote server,
 compressing and decompressing the data on the fly.
 
+Some more notes on streams:
+  Streams are composed using pipe method
+  The pipe method allows to connect different processing units (e.g read file, write file, compress file etc)
+  Each processing unit does only one thing (single responsibility principle)
+  The processing units must also be streams
+  Since streams have uniform interface, the processing units can understand eachother in terms of API
+  Note: the next stream in the pipeline must support the data type produced by the previous stream
+
+Add add an encryption layer
+
 To run the program first start the server:
   node server
 
