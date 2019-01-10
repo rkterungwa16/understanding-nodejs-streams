@@ -1,0 +1,19 @@
+what is a Buffer?
+  Buffers are Node.js built-in type for storing arbitarry binary data.
+
+  A buffer is an area of memory.
+
+  It represents a fixed-size chunk of memory (can’t be resized) allocated outside of the V8 JavaScript engine.
+
+  Array of integers, which each represent a byte of data.
+
+Why do we need a Buffer?
+
+  Buffers were introduced to help developers deal with binary data,
+  in an ecosystem that traditionally only dealt with strings rather than binaries.
+
+  Buffers are deeply linked with streams.
+  When a stream processor receives data faster than it can digest, it puts the data in a buffer.
+
+  A simple visualization of a buffer is when you are watching a YouTube video and the red line goes beyond your visualization point:
+  you are downloading data faster than you’re viewing it, and your browser buffers it.
