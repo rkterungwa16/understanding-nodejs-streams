@@ -1,0 +1,34 @@
+What are Streams?
+
+  They are a way to handle reading/writing files,
+  network communications, or any kind of end-to-end information exchange in an efficient way.
+
+  In the traditional way, when you tell the program to read a file,
+  the file is read into memory, from start to finish, and then you process it.
+
+  Using streams you read it piece by piece, processing its content without keeping it all in memory.
+
+Why use streams?
+
+  Memory efficiency: you don’t need to load large amounts of data in memory before you are able to process it
+
+  Time efficiency: it takes way less time to start processing data as soon as you have it,
+  rather than waiting till the whole data payload is available to start
+
+  Composability: pipe() method enables more cleaner, modular code that is reusable.
+
+    It does this by allowing us to connect to different processing units, each being responsible for one single
+    responsibility
+
+Stream powered Nodejs apis
+
+  process.stdin returns a stream connected to stdin
+  process.stdout returns a stream connected to stdout
+  process.stderr returns a stream connected to stderr
+  fs.createReadStream() creates a readable stream to a file
+  fs.createWriteStream() creates a writable stream to a file
+  http.request() returns an instance of the http.ClientRequest class, which is a writable stream
+  zlib.createGzip() compress data using gzip (a compression algorithm) into a stream
+  zlib.createGunzip() decompress a gzip stream.
+  zlib.createDeflate() compress data using deflate (a compression algorithm) into a stream
+  zlib.createInflate() decompress a deflate stream
