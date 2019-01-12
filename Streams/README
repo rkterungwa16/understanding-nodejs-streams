@@ -32,3 +32,48 @@ Stream powered Nodejs apis
   zlib.createGunzip() decompress a gzip stream.
   zlib.createDeflate() compress data using deflate (a compression algorithm) into a stream
   zlib.createInflate() decompress a deflate stream
+
+Every stream in Node.js is an implementation of one of the
+base abstract classes available in the stream core module
+
+  stream.Readable
+  stream.Writable
+  stream.Duplex
+  stream.Transform
+
+Each stream is an instance of EventEmitter.
+
+Streams can produce several types of events, such as
+  'end' when a Readable stream has finished reading
+  'error' when something goes wrong
+
+Streams are flexible because they can handle almost any
+JavaScript value including binary data
+
+  Binary mode: This mode is where data is streamed in the
+  form of chunks, such as buffers or strings
+
+  Object mode: This mode is where the streaming data is
+  treated as a sequence of discrete objects (allowing
+  us to use almost any JavaScript value)
+
+The above two operating modes allow us to use streams not
+only for I/O, but also as a tool to elegantly compose
+processing units.
+
+Different Types of Streams
+
+  Readable: a stream you can pipe from, but not pipe into.
+    You can recieve data, but not send data to it
+
+    When you push data into a readable stream, it is buffered,
+    until a consumer starts to read the data
+
+  Writable: a stream you can pipe into, but not pipe from.
+    You can send data, but cannot recieve from it
+
+  Duplex: a stream you can both pipe into and pipe from.
+
+  Transform: similar to Duplex.
+    The output is a transform of its input
+

@@ -1,5 +1,5 @@
 what is a Buffer?
-  Buffers are Node.js built-in type for storing arbitarry binary data.
+  Buffers are Node.js built-in type for storing arbitary binary data.
 
   A buffer is an area of memory.
 
