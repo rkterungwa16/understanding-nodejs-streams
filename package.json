@@ -31,5 +31,8 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "sinon": "^7.2.2"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
   }
 }

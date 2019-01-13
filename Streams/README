@@ -1,5 +1,8 @@
 What are Streams?
 
+  A stream is a sequence of data coming over time for a source
+  and running to a destination
+
   They are a way to handle reading/writing files,
   network communications, or any kind of end-to-end information exchange in an efficient way.
 
@@ -7,6 +10,32 @@ What are Streams?
   the file is read into memory, from start to finish, and then you process it.
 
   Using streams you read it piece by piece, processing its content without keeping it all in memory.
+
+  Sources of streams:
+    Files
+    Computer's memory
+    Input devices such as keyboard or a mouse
+
+  Once a stream is opened, data flows in chunks from its origin
+  to the process consuming it.
+
+    From a file: every character or byte would be read one at a time.
+
+    From a keyboard: every keystroke would transmit data over
+    the stream
+
+  Input streams are also called 'readable streams'. They are
+  meant to read data from a source.
+
+  Outbound streams or destination:
+    Files
+    Space in computer memory
+    Output devices like command line, printer, or screen
+
+  Outbound streams also called 'writeable streams'
+
+    Store data that comes over the stream.
+
 
 Why use streams?
 
