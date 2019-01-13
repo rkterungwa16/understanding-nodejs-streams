@@ -1,3 +1,4 @@
+/* eslint-disable no-cond-assign */
 
 /**
  * Attach a listener for the 'readable' event that
@@ -13,9 +14,8 @@ process.stdin.on('readable', () => {
   // read() method is a synchronous operation that
   // pulls a data chunk from the internal buffers of the
   // Readable stream
-  const chunk = process.stdin.read()
-  console.log('New data available', chunk)
-  while (chunk) {
+  let chunk
+  while (chunk = process.stdin.read()) {
     console.log(
       `Chunk read: (${chunk.length}) "${
         chunk.toString()}"`
