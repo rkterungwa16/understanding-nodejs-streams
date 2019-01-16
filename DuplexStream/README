@@ -1,0 +1,38 @@
+What is a duplex stream?
+  It is a stream that is both Readable and Writable.
+
+  It is useful when we want to describe an entity that is both
+  a data source and a data destination, such as network
+  sockets
+
+Creating a custom duplex
+  Provide an implementation for both _read() and _write()
+
+  The 'options' object passed to the Duplex() constructor is
+  internally forwaded to both the Readable and Writable
+  constructors.
+
+  options.objectMode
+  options.highWaterMark
+  options.decodeStrings
+  options.allowHalfOpen: defaults to true
+    if false will cause Readable and Writable parts of the
+    stream to end if only one of them does
+
+Transform streams
+
+  These are a special kind of Duplex stream that are
+  specifically designed to handle data transformations
+
+  No immediate relationship between the data read from
+  the stream and the data written into the stream.
+
+    Example: TCP socket, sends and recieves data to and
+    from the remote peer; the socket is not aware of any
+    relationship between the input and output
+
+  Transforms streams apply some kind of transformation to
+  each chunk of data that they recieve from their Writable
+  side and then make the transformed data available on their
+  Readable side.
+
