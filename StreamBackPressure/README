@@ -1,0 +1,32 @@
+Node streams can also suffer from bottlenecks
+
+Bottlenecks happen because data is written faster than the
+stream can consume it.
+
+  Bottleneck is handled by buffering the incoming data
+
+  If the stream does not give any feedback, we might
+  incur a situation where more and more data is
+  accumulated into the internal buffer, leading
+  to undesired levels of memory usage.
+
+  writable.write() will return false when the internal
+  buffer exceeds the highWaterMark limit.
+
+  Writable streams have a highWaterMark property.
+
+  highWaterMark property is the limit of the internal
+  buffer size beyond which the write() method starts
+  returning false, indicating that the application
+  should now stop writing.
+
+  When the buffer is emptied, the drain event is emitted,
+  communicating that it is safe to start writing again.
+    This mechanism is called back-pressure
+
+There is back-pressure in Readable streams too.
+  Back-pressure in readable streams is triggered when the
+  push() method, which is invoked inside _read(), returns
+  false
+
+
